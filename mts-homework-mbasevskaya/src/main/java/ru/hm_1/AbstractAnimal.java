@@ -4,10 +4,10 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public abstract class AbstractAnimal implements Animal{
-    protected String breed;//порода
-    protected String name; // имя
-    protected Double cost;//цена в магазине
-    protected String character;//характер
+    protected String breed;
+    protected String name;
+    protected Double cost;
+    protected String character;
     protected LocalDate birthDate;
 
     public AbstractAnimal(String breed, String name, Double cost, String character, LocalDate birthDate) {

@@ -2,7 +2,7 @@ package ru.hm_1.services;
 
 public class CreateAnimalServiceImpl implements CreateAnimalService {
 
-    public void addAnimal(int n) {
+    public void createAnimalWithAmount(int n) {
         for (int i = 0; i < n; i++) {
             randomAnimal();
         }
