@@ -3,10 +3,7 @@ import java.time.LocalDate;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
-import ru.hm_1.Cat;
-import ru.hm_1.Dog;
-import ru.hm_1.Shark;
-import ru.hm_1.Wolf;
+import ru.hm_1.*;
 
 public interface CreateAnimalService {
     String[] breeds  = {"Тигровая", "Персидская", "Мейн кун", "Бульдог", "Дикий", "Дворняга", "Сиамская"};
