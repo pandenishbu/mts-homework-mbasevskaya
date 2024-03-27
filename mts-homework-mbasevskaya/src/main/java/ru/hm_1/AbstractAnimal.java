@@ -1,7 +1,5 @@
 package ru.hm_1;
 
-import ru.hm_1.AnimalExceptions.InvalidAnimalBirthDateException;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -41,10 +39,7 @@ public abstract class AbstractAnimal implements Animal{
     }
 
     @Override
-    public LocalDate getBirthDate() throws InvalidAnimalBirthDateException{
-        if (birthDate == null) {
-            throw new InvalidAnimalBirthDateException(breed);
-        }
+    public LocalDate getBirthDate(){
         return birthDate;
     }
 

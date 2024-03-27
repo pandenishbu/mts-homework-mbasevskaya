@@ -9,20 +9,15 @@ import java.time.LocalDate;
 public class SearchServiceImpl implements SearchService {
 
     @Override
-    public void checkLeapYearAnimal(AbstractAnimal animal) throws InvalidAnimalBirthDateException, InvalidAnimalException {
+    public void checkLeapYearAnimal(AbstractAnimal animal) throws InvalidAnimalBirthDateException {
         if (animal == null) {
             LocalDate currentDate = LocalDate.now();
             throw new InvalidAnimalException("на вход пришло некорректный объект животного " + currentDate);
         }
-        int year = animal.getBirthDate().getYear();
-        boolean leapYear = (
-                year > 1584 &&
-                        (
-                                (year % 400 == 0) ||
-                                        (year %4 == 0 && year % 100 != 0)
-                        )
-        );
-        String result = leapYear ? " был рожден в високосный год": " не был рожден в високосный год";
+        if (animal.getBirthDate() == null) {
+            throw new InvalidAnimalBirthDateException(animal.getClass().getSimpleName());
+        }
+        String result = animal.getBirthDate().isLeapYear() ? " был рожден в високосный год": " не был рожден в високосный год";
         System.out.println(animal.getName() + result);
     }
 }

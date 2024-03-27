@@ -40,8 +40,7 @@ public interface CreateAnimalService {
     }
 
     default int randomNum(){
-        int i = new Random().nextInt(7);
-        return i;
+        return new Random().nextInt(7);
     }
 
     default Double randomCost(){
